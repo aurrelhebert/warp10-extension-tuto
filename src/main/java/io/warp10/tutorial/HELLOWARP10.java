@@ -44,20 +44,5 @@ public class HELLOWARP10 extends NamedWarpScriptFunction implements WarpScriptSt
     
     return stack;  
   }
-  
-  //
-  // Not necessary here
-  //
-  public int argDepth() {
-    return 0;
-  }
-
-  //
-  // Not necessary here
-  //
-  public boolean isProtected() {
-    // TODO Auto-generated method stub
-    return false;
-  }
 
 }
