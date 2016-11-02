@@ -72,14 +72,19 @@ public Object apply(WarpScriptStack stack) throws WarpScriptException {
 
 ## The extension class -- TutorialExtension
 
-In the class TutorialExtension, only the method getFunctions needs to be overwritten. In this methos the user just have to declare the set of function to add when using this defined extension. The function have to be added inside a Map, that contains the function name, and the function instantiated.
+In the class TutorialExtension, only the method getFunctions needs to be overwritten. In this method the user just have to declare the set of function to add when using this defined extension. The function have to be added inside a Map, that contains the function name, and the function instantiated. For example this map can be a class attribute and beiing instanciated in the extension constructor.
 
 ```
-public Map<String, Object> getFunctions() {
-  Map<String, Object> functions = new HashMap<String, Object>();
-  functions.put("HELLOWARP10", new HELLOWARP10("HELLOWARP10"));
-  return functions;
-}
+  private final Map<String, Object> functions;
+  
+  public TutorialExtension() {
+    this.functions = new HashMap<String, Object>();
+    this.functions.put("HELLOWARP10", new HELLOWARP10("HELLOWARP10"));
+  }
+  
+  public Map<String, Object> getFunctions() {    
+    return this.functions;
+  }
 ```
 
 ## Add this extension in a Warp10 plate-form
